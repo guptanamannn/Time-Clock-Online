@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-image: url('bg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+}
+
+.clock {
+    height: 18vh;
+    color: #2d3436;
+    font-size: 20vh;
+    font-family: sans-serif;
+    line-height: 20.2vh;
+    display: flex;
+    position: relative;
+    /*background: green;*/
+    overflow: hidden;
+    position: absolute;
+    left: 48%;
+    top: 36%;
+    transform: translate(-50%, -50%);
+}
+
+.clock::before, .clock::after {
+    content: '';
+    width: 7ch;
+    height: 3vh;
+    background: linear-gradient(to top, transparent);
+    position: absolute;
+    z-index: 2;
+}
+
+.clock::after {
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent);
+}
+
+.clock>div {
+    display: flex;
+}
+
+.tick {
+    line-height: 17vh;
+}
+
+.tick-hidden {
+    opacity: 0;
+}
+
+.move {
+    animation: move linear 1s infinite;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(0vh);
+    }
+    to {
+        transform: translateY(-20vh);
+    }
+}
+  /* for mobile */
+@media only screen and (max-width: 768px) {
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    html, body {
+        height: 100%;
+        width: 100%;
+    }
+    
+    body {
+        background-image: url('bgmob.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-color: #464646;
+    }
+    .clock {
+        height: 18vh;
+        color: #2d3436;
+        font-size: 5vh;
+        font-family: sans-serif;
+        line-height: 20.2vh;
+        display: flex;
+        position: relative;
+        /*background: green;*/
+        overflow: hidden;
+        position: absolute;
+        left: 75%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .clock::before, .clock::after {
+        content: '';
+        width: 7ch;
+        height: 3vh;
+        background: linear-gradient(to top, transparent);
+        position: absolute;
+        z-index: 2;
+    }
+    .clock::after {
+        bottom: 0;
+        background: linear-gradient(to bottom, transparent);
+    }
+    .clock>div {
+        display: flex;
+    }
+    .tick {
+        line-height: 20vh;
+    }
+    .tick-hidden {
+        opacity: 0;
+    }
+    .move {
+        animation: move linear 1s infinite;
+    }
+    @keyframes move {
+        from {
+            transform: translateY(3vh);
+        }
+        to {
+            transform: translateY(-3vh);
+        }
+    }
+}
